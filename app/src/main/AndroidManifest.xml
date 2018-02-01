@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.blazej.projekt">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icons"
+        android:label="What cook"
+        android:roundIcon="@mipmap/icons"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.Analytics.API_KEY"
+            android:value="AIzaSyBEo_ajp94W64HNua-E-TSIinl8lu-sB8M"/>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AddRecipeActivity"
+            android:label="Add recipe"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".MenuSearch"
+            android:label="Menu search"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ShowAllRecipes"
+            android:label="All recipes"
+            android:parentActivityName=".MenuSearch" />
+        <activity
+            android:name=".SelectedRecipeInfo"
+            android:parentActivityName=".ShowAllRecipes" />
+        <activity
+            android:name=".VoiceSearch"
+            android:label="Just talk"
+            android:parentActivityName=".MenuSearch" />
+        <activity android:name=".VoiceResult"
+            android:label="Sorted recipes"
+            android:parentActivityName=".VoiceSearch"
+            />
+        <activity android:name=".EditRecipe"
+            android:label="Edit"
+            android:parentActivityName=".ShowAllRecipes"
+            />
+    </application>
+
+</manifest>
